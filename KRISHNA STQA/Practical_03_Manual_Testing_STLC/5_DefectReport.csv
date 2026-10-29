@@ -1,0 +1,2 @@
+Defect ID,TC ID,Module,Defect Title,Steps to Reproduce,Expected Result,Actual Result,Severity,Priority,Status,Remarks
+N/A,N/A,N/A,No defect observed during execution,N/A,N/A,N/A,N/A,N/A,Closed,All 10 test cases passed successfully. No deviations from expected behavior were observed.

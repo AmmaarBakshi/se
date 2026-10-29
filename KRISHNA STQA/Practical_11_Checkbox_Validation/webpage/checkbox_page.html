@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkbox Demo</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    h2 { color: #333; }
+    label { display: block; margin: 6px 0; font-size: 16px; }
+    #result { margin-top: 15px; padding: 10px; background: #f4f4f4;
+              border-left: 4px solid #007bff; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Skills Checkbox Form</h2>
+  <p>Select the skills you know:</p>
+
+  <label><input type="checkbox" id="java" checked> Java</label>
+  <label><input type="checkbox" id="python"> Python</label>
+  <label><input type="checkbox" id="js" checked> JavaScript</label>
+  <label><input type="checkbox" id="cpp"> C++</label>
+  <label><input type="checkbox" id="sql"> SQL</label>
+  <label><input type="checkbox" id="html"> HTML</label>
+
+  <div id="result">Selected: Java, JavaScript</div>
+
+  <script>
+    // Dynamically update the "result" div when any checkbox changes
+    const boxes = document.querySelectorAll("input[type='checkbox']");
+    boxes.forEach(box => {
+      box.addEventListener("change", updateResult);
+    });
+
+    function updateResult() {
+      const selected = [];
+      boxes.forEach(box => {
+        if (box.checked) {
+          selected.push(box.parentElement.textContent.trim());
+        }
+      });
+      document.getElementById("result").innerText =
+        "Selected: " + (selected.length ? selected.join(", ") : "None");
+    }
+  </script>
+</body>
+</html>

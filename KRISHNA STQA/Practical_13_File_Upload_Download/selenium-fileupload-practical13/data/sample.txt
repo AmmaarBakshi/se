@@ -1,0 +1,1 @@
+This is a sample file used for the STQA Practical 13 file upload test.

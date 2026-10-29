@@ -1,0 +1,11 @@
+Scenario ID,Module,Test Scenario
+TS01,Login,Verify login with valid credentials
+TS02,Login,Verify login with invalid credentials
+TS03,Login,Verify validation when login fields are empty
+TS04,Products,Verify that all products are displayed with correct details
+TS05,Products,Verify that a product can be added to the cart
+TS06,Cart,Verify that the added product appears in the cart
+TS07,Cart,Verify that a product can be removed from the cart
+TS08,Checkout,Verify that the checkout information form is displayed
+TS09,Products,Verify that the sorting dropdown works correctly
+TS10,Logout,Verify that the user can log out successfully

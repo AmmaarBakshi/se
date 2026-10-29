@@ -1,0 +1,236 @@
+{
+  "id": "962137f0-9c7d-4f4d-ab8a-ceb89d49d67a",
+  "version": "2.0",
+  "name": "KRISHNA_STQA_Practical2",
+  "url": "https://www.saucedemo.com",
+  "tests": [
+    {
+      "id": "73ada102-b276-44d5-a366-1a88031df101",
+      "name": "TC01_SauceDemo_Login",
+      "commands": [
+        {
+          "id": "75689ffc-5674-4d2f-b725-0190c167a1e2",
+          "comment": "",
+          "command": "open",
+          "target": "https://www.saucedemo.com/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "f5bf043e-1f2a-405d-a512-8e797e6b162a",
+          "comment": "",
+          "command": "executeScript",
+          "target": "var el = document.getElementById('user-name'); var setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set; setter.call(el, 'standard_user'); el.dispatchEvent(new Event('input', { bubbles: true }));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0476fec7-5346-4f5c-8b22-b717fae912e1",
+          "comment": "",
+          "command": "executeScript",
+          "target": "var el = document.getElementById('password'); var setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set; setter.call(el, 'secret_sauce'); el.dispatchEvent(new Event('input', { bubbles: true }));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "ae5d2e42-7106-4c65-8223-372dd13af831",
+          "comment": "",
+          "command": "click",
+          "target": "id=login-button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d82ed963-cc63-43a1-95c3-fab7eb0c3bb0",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=.title",
+          "targets": [],
+          "value": "Products"
+        }
+      ]
+    },
+    {
+      "id": "4b2f28d8-5b9e-42f9-aa3a-51435009d006",
+      "name": "TC02_SauceDemo_Cart",
+      "commands": [
+        {
+          "id": "28aff629-86bd-4754-a99d-c57f79ed7b32",
+          "comment": "",
+          "command": "open",
+          "target": "https://www.saucedemo.com/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "aabbd394-42ae-43f3-8ca0-b2580fee69ac",
+          "comment": "",
+          "command": "executeScript",
+          "target": "var el = document.getElementById('user-name'); var setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set; setter.call(el, 'standard_user'); el.dispatchEvent(new Event('input', { bubbles: true }));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "9031372e-cb62-4005-a8ac-480af10ad634",
+          "comment": "",
+          "command": "executeScript",
+          "target": "var el = document.getElementById('password'); var setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set; setter.call(el, 'secret_sauce'); el.dispatchEvent(new Event('input', { bubbles: true }));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "6cc9e0fe-bdb1-485b-8a57-b9ba284b8bbc",
+          "comment": "",
+          "command": "click",
+          "target": "id=login-button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "2e29ba38-ffb6-4426-86ee-c3b30867b01a",
+          "comment": "",
+          "command": "executeScript",
+          "target": "var button = null; var attempts = 0; while (button === null && attempts < 20) { button = document.querySelector('button[id*=\"add-to-cart-sauce-labs-backpack\"]'); if (button === null) { attempts++; } } if (button !== null) { button.click(); }",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0600a3e9-beb4-445b-a4fe-cc44319f708f",
+          "comment": "",
+          "command": "pause",
+          "target": "1000",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "ef062322-c801-4d8c-997d-1dbde6dc1362",
+          "comment": "",
+          "command": "click",
+          "target": "css=.shopping_cart_link",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "9ef34102-fcbf-46e4-8c9a-6c989fb37142",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=.inventory_item_name",
+          "targets": [],
+          "value": "Sauce Labs Backpack"
+        }
+      ]
+    },
+    {
+      "id": "16425b40-2ecd-4956-9a99-53214cadddbc",
+      "name": "TC03_TheInternet_Dropdown",
+      "commands": [
+        {
+          "id": "06705657-dc8e-47fa-b260-1c892d8c9ea7",
+          "comment": "",
+          "command": "open",
+          "target": "https://the-internet.herokuapp.com/dropdown",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "77a6d782-7d1c-41bb-a1a6-617f72f95464",
+          "comment": "",
+          "command": "select",
+          "target": "id=dropdown",
+          "targets": [],
+          "value": "label=Option 2"
+        },
+        {
+          "id": "fa7d5f56-2873-4541-8a1e-0d6e5faa0d4b",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=h3",
+          "targets": [],
+          "value": "Dropdown List"
+        }
+      ]
+    },
+    {
+      "id": "6ef8fcff-182e-45ff-8223-f31563fe7e72",
+      "name": "TC04_TheInternet_DynamicControl",
+      "commands": [
+        {
+          "id": "c9b8d9c8-cbcd-4772-9d89-669d3537887d",
+          "comment": "",
+          "command": "open",
+          "target": "https://the-internet.herokuapp.com/dynamic_controls",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "36a8a161-7d9e-4c21-8e36-0dcf88c362f1",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[text()='Remove']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "31e6816e-725b-40f5-ba9d-5c2ee9a4f09f",
+          "comment": "",
+          "command": "pause",
+          "target": "3000",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "129d76f6-e975-4024-a73d-152f2646e19b",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=message",
+          "targets": [],
+          "value": "It's gone!"
+        },
+        {
+          "id": "e0a38a5b-002e-42aa-834a-fee225f6404d",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[text()='Add']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "41fe68a5-deff-4cf9-8004-ed173dc7325c",
+          "comment": "",
+          "command": "pause",
+          "target": "3000",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "96d7482f-2993-40f7-af9a-6eb851ffe9a9",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=message",
+          "targets": [],
+          "value": "It's back!"
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "53f8640e-fd6a-4b3c-b161-626f23888397",
+      "name": "STQA_Practical2_Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "73ada102-b276-44d5-a366-1a88031df101",
+        "4b2f28d8-5b9e-42f9-aa3a-51435009d006",
+        "16425b40-2ecd-4956-9a99-53214cadddbc",
+        "6ef8fcff-182e-45ff-8223-f31563fe7e72"
+      ]
+    }
+  ],
+  "urls": [
+    "https://www.saucedemo.com/",
+    "https://the-internet.herokuapp.com/"
+  ],
+  "plugins": []
+}

@@ -1,0 +1,22 @@
+JENKINS JOB SETTINGS  (Freestyle project: STQA_Selenium_Build)
+
+Global Tool Configuration
+  JDK     : Name = JDK17   | uncheck "Install automatically" | JAVA_HOME = C:\Program Files\Java\jdk-17
+  Maven   : Name = Maven3  | check "Install automatically"
+
+Job
+  New Item -> name: STQA_Selenium_Build -> Freestyle project -> OK
+  Source Code Management : None   (Git + repo URL if project is on GitHub)
+  Build Triggers         : Poll SCM -> H/5 * * * *      (optional; or just click "Build Now")
+  Build -> Invoke top-level Maven targets
+       Maven Version : Maven3
+       Goals         : clean test
+       (Advanced) POM : full path to ...\selenium-jenkins-practical17\pom.xml
+  Post-build Actions -> Publish HTML reports
+       HTML directory to archive : test-output
+       Index page(s)             : index.html
+       Report title              : TestNG Report
+       (If "test-output" is not created by Surefire, use: target/surefire-reports)
+
+Command line check before Jenkins:
+  mvn clean test

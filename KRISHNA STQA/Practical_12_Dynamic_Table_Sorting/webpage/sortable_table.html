@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Sortable Table</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    table { border-collapse: collapse; width: 90%; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f0f0f0; cursor: pointer; }
+    th:hover { background-color: #e0e0e0; }
+    input { padding: 6px; font-size: 14px; width: 250px; }
+  </style>
+</head>
+<body>
+  <h2>Employee Records</h2>
+  <label>Filter by name: <input id="filterBox" type="text" placeholder="Type a name..."></label>
+
+  <table id="empTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">ID</th>
+        <th onclick="sortTable(1)">Name</th>
+        <th onclick="sortTable(2)">Age</th>
+        <th onclick="sortTable(3)">City</th>
+        <th onclick="sortTable(4)">Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>3</td><td>Charlie</td><td>28</td><td>Delhi</td><td>45000</td></tr>
+      <tr><td>1</td><td>Alice</td><td>32</td><td>Mumbai</td><td>62000</td></tr>
+      <tr><td>5</td><td>Ethan</td><td>30</td><td>Pune</td><td>51000</td></tr>
+      <tr><td>2</td><td>Bob</td><td>26</td><td>Chennai</td><td>38000</td></tr>
+      <tr><td>4</td><td>Diana</td><td>29</td><td>Bangalore</td><td>55000</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    let sortAsc = true;
+    function sortTable(colIndex) {
+      const tbody = document.querySelector("#empTable tbody");
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      const numeric = !isNaN(rows[0].cells[colIndex].innerText);
+
+      rows.sort((a, b) => {
+        const x = a.cells[colIndex].innerText;
+        const y = b.cells[colIndex].innerText;
+        if (numeric) {
+          return sortAsc ? Number(x) - Number(y) : Number(y) - Number(x);
+        } else {
+          return sortAsc ? x.localeCompare(y) : y.localeCompare(x);
+        }
+      });
+
+      rows.forEach(r => tbody.appendChild(r));
+      sortAsc = !sortAsc;
+    }
+
+    // Filter functionality
+    document.getElementById("filterBox").addEventListener("input", function() {
+      const filter = this.value.toLowerCase();
+      document.querySelectorAll("#empTable tbody tr").forEach(row => {
+        const name = row.cells[1].innerText.toLowerCase();
+        row.style.display = name.includes(filter) ? "" : "none";
+      });
+    });
+  </script>
+</body>
+</html>

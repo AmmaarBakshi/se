@@ -1,0 +1,17 @@
+Field,Details
+Project Name,SauceDemo Manual Testing
+Application,SauceDemo Web Application
+URL,https://www.saucedemo.com/
+Testing Type,Functional Testing
+Testing Method,Manual Testing
+Browser,Google Chrome
+Objective,To verify the main functional modules of the SauceDemo web application and identify any defects
+Test Data,Valid credentials (standard_user/secret_sauce) and invalid credentials
+Scope,"Login, Products, Cart, Checkout, Logout"
+Out of Scope,"Database testing, Server-side testing, Payment gateway, Performance testing"
+Entry Criteria,Application is accessible and test data is available
+Exit Criteria,All planned test cases are executed and results are documented
+Deliverables,"Test Scenarios, Test Cases, Test Execution Report, Defect Report"
+Prepared By,Krishna
+Roll Number,[Your Roll Number]
+Date,[Today's Date]

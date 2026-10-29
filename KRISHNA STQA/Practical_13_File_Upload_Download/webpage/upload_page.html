@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Upload Demo</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input[type='file'] { padding: 8px; }
+    button { padding: 8px 16px; margin-left: 10px; }
+    #message { margin-top: 15px; font-weight: bold; color: #007bff; }
+  </style>
+</head>
+<body>
+  <h2>File Upload Demo</h2>
+  <p>Select a file to upload:</p>
+  <input type="file" id="fileUpload">
+  <button id="uploadBtn" onclick="showMessage()">Upload</button>
+  <p id="message"></p>
+
+  <script>
+    function showMessage() {
+      const file = document.getElementById('fileUpload').files[0];
+      if (file) {
+        document.getElementById('message').innerText =
+          'File selected: ' + file.name;
+      } else {
+        document.getElementById('message').innerText =
+          'No file selected';
+      }
+    }
+  </script>
+</body>
+</html>

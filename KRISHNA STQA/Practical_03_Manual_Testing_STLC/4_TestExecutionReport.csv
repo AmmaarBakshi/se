@@ -1,0 +1,17 @@
+TC ID,Test Case,Expected Result,Actual Result,Status,Defect ID
+TC01,Valid Login,Products page opens,Products page displayed with 6 items,Pass,--
+TC02,Invalid Login,Error message shown,"Error message ""Epic sadface: Username and password do not match"" displayed",Pass,--
+TC03,Empty Login Fields,Validation message shown,"Error message ""Epic sadface: Username is required"" displayed",Pass,--
+TC04,Products Display,All products displayed,All 6 products displayed with names and prices,Pass,--
+TC05,Add to Cart,Product added to cart,Cart badge count increased to 1,Pass,--
+TC06,Verify Product in Cart,Product shown in cart,Sauce Labs Backpack displayed with price $29.99,Pass,--
+TC07,Remove Product,Product removed,Product removed and cart badge disappeared,Pass,--
+TC08,Checkout Form,Checkout form displayed,First Name Last Name and Zip fields displayed,Pass,--
+TC09,Product Sorting,Products sorted,Products rearranged from $7.99 to $49.99,Pass,--
+TC10,Logout,User logged out,Redirected to login page,Pass,--
+Summary,,,,,
+Total Test Cases,10,,,,
+Passed,10,,,,
+Failed,0,,,,
+Blocked,0,,,,
+Pass Percentage,100%,,,,

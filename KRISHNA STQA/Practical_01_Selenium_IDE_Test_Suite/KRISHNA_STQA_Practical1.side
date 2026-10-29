@@ -1,0 +1,147 @@
+{
+  "id": "b345ae94-d180-4b59-a0a5-630bc48ee1c5",
+  "version": "2.0",
+  "name": "KRISHNA_STQA_Practical1",
+  "url": "http://localhost:8000",
+  "tests": [
+    {
+      "id": "828827e1-27a2-422f-86f3-20d94d37a994",
+      "name": "TC01_HTML_Page",
+      "commands": [
+        {
+          "id": "d11c46ff-b1bc-4da1-9dd0-2a0bc92bd484",
+          "comment": "",
+          "command": "open",
+          "target": "http://localhost:8000/index.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "6d9af42f-e615-4900-8d6d-d7bb2b475b15",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=h1",
+          "targets": [],
+          "value": "Software Testing and Quality Assurance"
+        }
+      ]
+    },
+    {
+      "id": "06949a78-215d-4677-a908-c4497e0d5daa",
+      "name": "TC02_XML_Response",
+      "commands": [
+        {
+          "id": "134848fb-31eb-4159-b64b-b43d4c4f749f",
+          "comment": "",
+          "command": "open",
+          "target": "http://localhost:8000/xml_response.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "88c7a666-e297-4dd7-aa2e-6909b20d6803",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#studentName",
+          "targets": [],
+          "value": "Vicky"
+        }
+      ]
+    },
+    {
+      "id": "125045ca-5a0a-4991-b9c8-58bbcf6945e6",
+      "name": "TC03_JSON_API",
+      "commands": [
+        {
+          "id": "0b854e85-13a7-4ff3-a640-f18c59cc6076",
+          "comment": "",
+          "command": "open",
+          "target": "http://localhost:8000/json_response.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "9cc0b024-476e-4078-863e-a04b516183e1",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#userName",
+          "targets": [],
+          "value": "Leanne Graham"
+        }
+      ]
+    },
+    {
+      "id": "be952993-dca2-44ad-ac2e-02dcf4cdd622",
+      "name": "TC04_Dynamic_Form",
+      "commands": [
+        {
+          "id": "4b809fb3-6439-48f9-921e-75ff7f3e5ba4",
+          "comment": "",
+          "command": "open",
+          "target": "http://localhost:8000/dynamic.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "997edc24-8556-47c5-a974-781ad6bd0954",
+          "comment": "",
+          "command": "executeScript",
+          "target": "document.getElementById('name').value='Vicky';",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "2f520c6a-65f8-41b7-a39e-826e58049961",
+          "comment": "",
+          "command": "select",
+          "target": "id=course",
+          "targets": [],
+          "value": "label=Computer Science"
+        },
+        {
+          "id": "031c4397-a7e4-43e3-a57d-5dbbb9dbfba3",
+          "comment": "",
+          "command": "click",
+          "target": "id=agree",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "358be6dd-720e-43f9-b190-076f20ebe509",
+          "comment": "",
+          "command": "click",
+          "target": "id=submit",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d2bfb09a-d88b-4774-a30a-6a2d9b74c652",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#message",
+          "targets": [],
+          "value": "Form submitted successfully - Vicky - Computer Science"
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "1f1a2e41-2a1c-47f0-ab50-8316228e1ea0",
+      "name": "STQA_Practical1_Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "828827e1-27a2-422f-86f3-20d94d37a994",
+        "06949a78-215d-4677-a908-c4497e0d5daa",
+        "125045ca-5a0a-4991-b9c8-58bbcf6945e6",
+        "be952993-dca2-44ad-ac2e-02dcf4cdd622"
+      ]
+    }
+  ],
+  "urls": [
+    "http://localhost:8000/"
+  ],
+  "plugins": []
+}
